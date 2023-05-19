@@ -1,0 +1,28 @@
+{
+  "name": "pre-fetch-api-webpack-plugin",
+  "version": "1.0.0",
+  "description": "H5接口预请求插件",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node ./build/generate.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "prefetch",
+    "webpack",
+    "plugin",
+    "H5",
+    "api",
+    "fetch",
+    "vue"
+  ],
+  "author": "wuyunqiang",
+  "license": "ISC",
+  "peerDependencies": {
+    "html-webpack-plugin": "^3.0.0 || ^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5"
+  }
+}

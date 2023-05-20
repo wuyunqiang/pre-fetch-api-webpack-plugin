@@ -17,8 +17,6 @@ PreApiServicePlugin预请求插件
 实现原理
 插件会在html的head里面插入一段 code 从 query 上面获取参数 提前进行请求接口，插件会在 window 上挂载 usePreFetchApiService 方法，业务方可以使用此方法来获取结果数据。
  
-
-使用fetch发送网络请求
 功能列表
 1. 可以配置一个页面 并行请求多个接口
 2. 可以配置多个页面 请求一个接口

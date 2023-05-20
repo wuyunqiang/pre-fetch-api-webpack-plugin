@@ -36,8 +36,12 @@ function buildToCode() {
   const codeStrList = fileList.map((item) => item.toString());
   const scriptText = codeStrList.reduceRight((all, cur) => `${all}${cur}`, "");
   const code = transformNoPolyfill(scriptText);
-  fs.writeFile(fileName, code, "utf8", (error) => {
-    console.log("test error", error);
+  fs.writeFile(fileName, `${code}`, "utf8", (error) => {
+    if(!error){
+      console.log("写入成功");
+    }else{
+      console.log("error:", error);
+    }
   });
 }
 

@@ -1,1 +1,3 @@
-module.exports.fileName = `${__dirname}/code.js`;
+
+const path = require("path");
+module.exports.fileName = `${path.resolve()}/dist/code.js`;

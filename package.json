@@ -8,6 +8,10 @@
     "gen": "node ./build/generate.js",
     "build": "rm -rf ./dist && rollup -c && yarn gen"
   },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "prefetch",
     "webpack",
@@ -18,7 +22,6 @@
     "vue"
   ],
   "author": "wuyunqiang",
-  "license": "ISC",
   "peerDependencies": {
     "html-webpack-plugin": "^3.0.0 || ^4.0.0"
   },

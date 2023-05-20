@@ -4,8 +4,7 @@
   "description": "H5接口预请求插件",
   "main": "src/index.js",
   "scripts": {
-    "build": "node ./build/generate.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node ./build/generate.js"
   },
   "keywords": [
     "prefetch",

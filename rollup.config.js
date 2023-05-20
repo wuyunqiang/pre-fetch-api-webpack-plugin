@@ -16,7 +16,6 @@ module.exports = {
       file: "dist/index.js",
       exports: "auto",
       sourcemap: true,
-      name: PKG_JSON.name,
     },
   ],
   plugins: [

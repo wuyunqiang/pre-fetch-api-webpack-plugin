@@ -15,7 +15,6 @@ module.exports = {
       format: "cjs",
       file: "dist/index.js",
       exports: "auto",
-      sourcemap: true,
     },
   ],
   plugins: [

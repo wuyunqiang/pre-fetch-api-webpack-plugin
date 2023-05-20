@@ -1,6 +1,6 @@
 const babel = require("@babel/core");
 const fs = require("fs");
-const { fileName } = require("./file");
+const path = require("path");
 
 /**
  * 批量读取script目录的脚本
@@ -36,8 +36,12 @@ function buildToCode() {
   const codeStrList = fileList.map((item) => item.toString());
   const scriptText = codeStrList.reduceRight((all, cur) => `${all}${cur}`, "");
   const code = transformNoPolyfill(scriptText);
-  fs.writeFile(fileName, code, "utf8", (error) => {
-    console.log("test error", error);
+  fs.writeFile(`${path.resolve()}/dist/code.js`, `${code}`, "utf8", (error) => {
+    if(!error){
+      console.log("写入成功");
+    }else{
+      console.log("error:", error);
+    }
   });
 }
 

@@ -47,7 +47,9 @@
 params > cookieParams > staticParams
 
 # 示例代码：
-vue.config.js
+
+### 1: npm i pre-fetch-api-webpack-plugin <br>
+### 2: vue.config.js
 ```
 const PreFetchApiPlugin = require('pre-fetch-api-webpack-plugin');
 chainWebpack: config => {
@@ -79,7 +81,7 @@ chainWebpack: config => {
    }
 ```
 
-
+### 3:业务使用
 ```
 export const getPageData = async () => {
     const usePreFetchApiService = window.usePreFetchApiService && window.usePreFetchApiService() || {};

@@ -83,9 +83,10 @@ chainWebpack: config => {
 
 ### 3:业务使用
 ```
+const usePreFetchApiService = window.usePreFetchApiService?.();
+
 export const getPageData = async () => {
-    const usePreFetchApiService = window.usePreFetchApiService && window.usePreFetchApiService() || {};
-    const { preFetchService } = usePreFetchApiService;
+    const { preFetchService } = usePreFetchApiService?.() || {};
     if (preFetchService) {
         try {
             const res = await preFetchService; 

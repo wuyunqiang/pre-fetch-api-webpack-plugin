@@ -47,38 +47,43 @@ function preEntry(optionList) {
         }
 
         const preService = apiService(cur);
-        let hasRead = false;
-        window.usePreFetchApiService = function() {
-            if (!cur) {
+        
+        window.usePreFetchApiService = function(){
+            let hasRead = false;
+            return function() {
+                if (!cur) {
+                    return {
+                        status: 'done',
+                    };
+                }
+                let valid;
+                if (type === staticObj.hash) {
+                    const hashList = cur.hashList || [];
+                    valid = hashList.some(hash => hash === getPageHash() || hash === staticObj.all);
+                } else {
+                    const pathList = cur.pathList || [];
+                    valid = pathList.some(path => path === getPagePath() || path === staticObj.all);
+                }
+    
+                if (hasRead || !valid) {
+                    return {
+                        status: 'done',
+                    };
+                }
+                hasRead = true;
                 return {
-                    status: 'done',
+                    status: 'succ',
+                    preFetchService: preService,
                 };
             }
-            let valid;
-            if (type === staticObj.hash) {
-                const hashList = cur.hashList || [];
-                valid = hashList.some(hash => hash === getPageHash() || hash === staticObj.all);
-            } else {
-                const pathList = cur.pathList || [];
-                valid = pathList.some(path => path === getPagePath() || path === staticObj.all);
-            }
-
-            if (hasRead || !valid) {
-                return {
-                    status: 'done',
-                };
-            }
-            hasRead = true;
-            return {
-                status: 'succ',
-                preFetchService: preService,
-            };
         };
     } catch (error) {
         console.error('test error', error);
         window.usePreFetchApiService = function() {
-            return {
-                status: 'error',
+            return function(){
+                return {
+                    status: 'error',
+                };
             };
         };
     }

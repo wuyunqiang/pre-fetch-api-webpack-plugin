@@ -1,3 +1,10 @@
+babel-plugin：babel相关插件  <br>
+build：编译源码ES6->ES5  <br>
+script: 这里的文件会被自动收集 经过编译后插入到html的header中<br>
+src: webpack插件先关逻辑  <br>
+test: 做一些函数测试<br>
+dist: 编译后生成的最终文件 <br>
+
 # 应用场景：
 
 可以应用在首屏接口上 和 js 并行发送请求 减少网络耗时 提升页面秒开率

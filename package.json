@@ -1,6 +1,6 @@
 {
   "name": "pre-fetch-api-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "H5接口预请求插件",
   "main": "dist/index.js",
   "type": "commonjs",

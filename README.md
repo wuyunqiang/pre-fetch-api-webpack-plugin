@@ -5,6 +5,9 @@
 # 实现原理
 插件会在 html 的 head 里面插入一段 code 从 query 上面获取参数 提前进行请求接口，插件会在 window 上挂载 usePreFetchApiService 方法，业务方可以使用此方法来获取结果数据。
 
+<img width="1098" alt="截屏2024-02-25 下午5 13 38" src="https://github.com/wuyunqiang/pre-fetch-api-webpack-plugin/assets/13480948/f528fa8d-9a67-41df-a06b-2e5b5219db42">
+
+
 # 功能列表
 1. 可以配置一个页面 并行请求多个接口
 2. 可以配置多个页面 请求一个接口
